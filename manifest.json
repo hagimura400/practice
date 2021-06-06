@@ -1,0 +1,32 @@
+{
+  "name": "Stern mouse",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Sample Chrome Extension",
+  "icons": {
+  "16": "icon16.png",
+  "48": "icon48.png",
+  "128": "icon128.png"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*" , "https://*/*" , "ftp://*/*"],
+    "js": [
+     "jquery-3.6.0.min.js"
+    ]
+  }],
+  "background": {
+    "scripts": [
+      "background.js",
+      "contextMenu.js"
+  ],
+    "persistent": false
+  },
+
+  "permissions": [
+    "https://*/",
+    "activeTab",
+    "contextMenus",
+    "tabs",
+    "storage"
+  ]
+}
